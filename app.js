@@ -1,25 +1,49 @@
 const express = require("express");
-const app = express();
-const morgan = require("morgan");
 const bodyParser = require("body-parser");
-// const userRouter = require("../routes/user.route");
+const app = express();
 
-// app.use(bodyParse());
-app.use(express.urlencoded({ extended: true }));
-app.use(morgan("combined"));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+// Dùng để phục vụ các file tĩnh trong thư mục public (score.html, score.css, index.html, index.css, index.js)
 app.use(express.static("public"));
 
-// app.get("/", (req, res) => {
-//   res.status(200).send("Hello World");
-// });
+// Tạo route POST '/api/score'
+app.post("/api/score", (req, res) => {
+  const player1 = {
+    name: req.body.player1,
+    score: 0,
+  };
 
-app.get("/", (req, res) => {
-  res.status(200).send("Hello Advance");
+  const player2 = {
+    name: req.body.player2,
+    score: 0,
+  };
+
+  const player3 = {
+    name: req.body.player3,
+    score: 0,
+  };
+
+  const player4 = {
+    name: req.body.player4,
+    score: 0,
+  };
+
+  const gameData = [
+    {
+      idRound: 1,
+      round: {
+        player1,
+        player2,
+        player3,
+        player4,
+      },
+    },
+  ];
+
+  res.json(gameData);
 });
-
-//api router
-// app.use("/api/v1/todos", userRouter);
 
 const port = 3000;
 app.listen(port, () => {

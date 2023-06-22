@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  max-width: 1000px;
+  margin: 10px auto;
+}
+#title {
+  text-align: center;
+  padding: 10px;
+  color: blueviolet;
+  font-weight: 700;
+}
+table {
+  border-collapse: collapse;
+}
+
+#row-sum {
+  background-color: blue;
+  text-align: left;
+}
+#row-sum th {
+  border-collapse: collapse;
+  color: white;
+}
+table th {
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+table td {
+  padding: 5px;
+  border: none;
+}
+tfoot th {
+  border: none;
+  text-align: left;
+}
+.input-user input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#btn-add-round {
+  background-color: blue;
+  padding: 5px 10px;
+  color: white;
+}

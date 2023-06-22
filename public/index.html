@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Index</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Minh Cường</th>
+            <th>Thiên Phú</th>
+            <th>Xuân Bách</th>
+            <th>Mạnh Hùng</th>
+          </tr>
+          <tr id="row-sum">
+            <th>Sum of Scores(<span id="sum-value">9</span>)</th>
+            <th>5</th>
+            <th>4</th>
+            <th>3</th>
+            <th>-1</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="round-player">
+            <td>Round 1<span></span></td>
+            <td class="input-user"><input type="number" /></td>
+            <td class="input-user"><input type="number" /></td>
+            <td class="input-user"><input type="number" /></td>
+            <td class="input-user"><input type="number" /></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <th colspan="5">
+            <button id="btn-add-round">Add round</button>
+          </th>
+        </tfoot>
+      </table>
+    </div>
+
+    <script src="/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  max-width: 700px;
+  margin: auto;
+}
+
+#list-player {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+#list-player input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#please-name {
+  background-color: gray;
+  padding: 10px;
+}
+#btn-create {
+  background-color: blue;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 7px;
+  border: none;
+}

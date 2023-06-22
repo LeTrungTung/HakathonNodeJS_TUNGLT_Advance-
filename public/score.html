@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Score</title>
+    <link rel="stylesheet" href="./score.css" />
+    <!-- Đã thay đổi đường dẫn CSS -->
+  </head>
+  <body>
+    <div id="wrap">
+      <h2 id="title-score">Score keeper</h2>
+      <div id="list-player">
+        <input
+          type="text"
+          placeholder="Enter a player name"
+          id="player1"
+        />
+        <input
+          type="text"
+          placeholder="Enter a player name"
+          id="player2"
+        />
+        <input
+          type="text"
+          placeholder="Enter a player name"
+          id="player3"
+        />
+        <input
+          type="text"
+          placeholder="Enter a player name"
+          id="player4"
+        />
+      </div>
+      <p id="please-name">Please input player name!!</p>
+      <div><button id="btn-create">Create Game</button></div>
+    </div>
+
+    <script>
+      const createGameButton = document.getElementById("btn-create");
+      createGameButton.addEventListener("click", () => {
+        const player1 = document.getElementById("player1").value;
+        const player2 = document.getElementById("player2").value;
+        const player3 = document.getElementById("player3").value;
+        const player4 = document.getElementById("player4").value;
+
+        // Gửi yêu cầu POST đến API '/api/score' với dữ liệu người chơi
+        fetch("/api/score", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            player1,
+            player2,
+            player3,
+            player4,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            // Chuyển hướng sang trang index.html và truyền dữ liệu người chơi
+            window.location.href = `/index.html?data=${encodeURIComponent(
+              JSON.stringify(data)
+            )}`;
+          })
+          .catch((error) => console.error(error));
+      });
+    </script>
+  </body>
+</html>
